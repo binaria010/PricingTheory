@@ -109,7 +109,7 @@ $$
 
 obtained by substracting equation (2) from equation (1). 
 
-Finally, the number $q = \frac{1+r - d}{u - d}$ obtained from  $S_0 = \frac{1}{1+r}(q*S_0*u + (1-q)*S_0*d)$.
+Finally, the number $q = \frac{1+r - d}{u - d}$ obtained from  $S_0 = \frac{1}{1+r}(q * S_0*u + (1-q) * S_0 * d)$.
 
 Note that if $0<d<(1+r) < u <1$, then the number $q$ satisfies the following: $q~ 1-q \in(0,1)$, and their sum is 1. This means that the numbers $q, 1-q$ can be interpreted as probabilities and the expression for $X_0$ is nothing but the discounted expected value of the random variable $V_1$ under the probability law $q$, i.e,
 
