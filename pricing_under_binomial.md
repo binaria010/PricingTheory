@@ -49,7 +49,7 @@ $$
 
 The goal is to determine a price for this option. To achieve this, consider the following situation: You start with an initial wealth $X_0=1.2$ and buy $\Delta_0 =0.5$ shares of the stock whose price is $S$. Since the stock at time zero costs $4$ per share, you must use your initial wealth $X_0$ and borrow and additional of $0.80$ to do this. This leave you with a cash position of $X_0 - \Delta_0 S_0 = -0.8$ (a debt of 0.8 to the money market). At time 1 your cash position will be $(1+r)(X_0 - \Delta_0 S_0) = -1$ (i.e the cash at time 0 with rate growth of $r =1/4$) This means that at time 1 you will have a debt of 1 to the money market. 
 
-On the other hand, at time 1 you will have your stock valued at $\Delta_0 S_1$ , that is, with probability $p$ it will be $\Delta_0 *S_1 = 0.5*8 = 4$ and with probability $1-p$ it will be valued at $\Delta_0 *S_1 = 0.5*2 =1$, therefore your wealth at time 1 will be
+On the other hand, at time 1 you will have your stock valued at $\Delta_0 S_1$ , that is, with probability $p$ it will be $\Delta_0 * S_1 = 0.5 * 8 = 4$ and with probability $1-p$ it will be valued at $\Delta_0 * S_1 = 0.5*2 =1$, therefore your wealth at time 1 will be
 
 $$
 X_1 = \Delta_0 S_1 + (1+r)(X_0 - \Delta_0 S_0)=\begin{cases}
