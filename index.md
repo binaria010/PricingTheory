@@ -21,8 +21,8 @@
 <nav>
 <ul>
 
-  <li> 
-    Pricing under the binomial tree model.
+  <li> <a href="#Pricing_Options">
+    Pricing under the binomial tree model.</a>
   </li>
   <li>
     Pricing under the Black-Scholes model.
