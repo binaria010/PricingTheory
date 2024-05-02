@@ -13,13 +13,16 @@
   <meta name="google-site-verification" content="kuks5e4as6qBaGVCSzmHkQJa5Tss89_g5DmRXeUi7K8" />
 </head>
 
-<h1> Pricing Options </h1>
+
+
+
+<h1>Pricing Options</h1>
 
 The following is a toy example to understand the <strong> Risk Neutral Measure </strong> for pricing derivative securities. Under this risk neutral measure it is guaranteed a no arbitrage price.
 
 First, let us define this notion of arbitrage:
 
-<strong>Definition </strong> An arbitrage is a portfolio value processe $X(t)$ satisfying that $X(0)=0$ and for some time $T > 0$:
+<strong>Definition </strong>  An arbitrage is a portfolio value processe $X(t)$ satisfying that $X(0)=0$ and for some time $T > 0$:
 
 $$
 \mathbb{P}(X(T) \geq 0)=1\quad\text{and }\quad \mathbb{P}(X>0)>0.
