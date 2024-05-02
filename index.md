@@ -21,14 +21,14 @@
 <nav>
 <ul>
 
-  <li> <a href="#Pricing_Options">
+  <li> <a href="#pricing_under_binomial">
     Pricing under the binomial tree model.</a>
   </li>
-  <li>
-    Pricing under the Black-Scholes model.
+  <li><a href="#pricing_under_BSmodel">
+    Pricing under the Black-Scholes model.</a>
   </li>
-  <li>
-    Pricing under the risk-neutral measure.
+  <li><a href="#pricing_under_risk-neutral">
+    Pricing under the risk-neutral measure.</a>
   </li>
 </ul>
 
