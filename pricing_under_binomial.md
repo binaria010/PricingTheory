@@ -22,7 +22,7 @@ The following is a toy example to understand the <strong> Risk Neutral Measure <
 
 First, let us define this notion of arbitrage:
 
-<strong>Definition </strong>  An arbitrage is a portfolio value processe $X(t)$ satisfying that $X(0)=0$ and for some time $T \geq 0$:
+<strong>Definition </strong>  An arbitrage is a portfolio value processe $X(t)$ satisfying that $X(0)=0$ and for some time $T > 0$:
 
 $$
 \mathbb{P}(X(T) \geq 0)=1\quad\text{and }\quad \mathbb{P}(X>0)>0.
