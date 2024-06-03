@@ -487,7 +487,7 @@ print(results_out_the_money)
 _______________________________
 __________________________________
 
-<h3> PDE approach to price the american put. </h2>
+<h3> PDE approach to price the american put. </h3>
 
 The price $V(t,s)$ of an american put satisfies the <em>Linear Complementary Problem </em> (LCP):
 
@@ -569,9 +569,11 @@ K - S \quad &\text{if }  0 \leq \tfrac{S}{B(t)}< 1
 \end{cases}
 $$
 
-<h2> Numerical solution. </h2>
+<h4> Numerical solution. </h4>
 
-<h3> Implicit scheme. </h3>
+
+
+<h4> Implicit scheme. </h4>
 
 Now we proceed to find an approximate solution by means of the Implicit Euler scheme:
 
@@ -794,7 +796,7 @@ print(B_implicit[0])
 --------------------------------
 ---------------------------------
 
-<h2> Explicit method </h2>
+<h4> Explicit method </h4>
 
 In this case the discretized equation is of the form:
 
@@ -956,7 +958,7 @@ plt.show()
 
 
     
-![png](AmericanBermudanOptions_files/AmericanBermudanOptions_66_0.png)
+![png](AmericanBermudanOptions_files/AmericanBermudanOptions_67_0.png)
     
 
 
