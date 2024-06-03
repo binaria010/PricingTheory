@@ -30,6 +30,9 @@
   <li><a href="pricing_under_risk-neutral">
     Pricing under the risk-neutral measure.</a>
   </li>
+  <li><a href = "AmericanBermudanOptions"> 
+        Pricing American/Bermudan options.</a>
+  </li>
 </ul>
 
 
