@@ -23,6 +23,21 @@ The second approach is the PDE method. We present the partial differential equat
 
 In both cases we are under the Black-Scholes model.
 
+<h3> American Put. </h3>
+
+Consider a put struck at $K$ on a single underlying asset whose price at time $t$ is $S(t)$. The dynamics of $S$ is modeled as a geometric Brownian motion $GBM(r,\sigma^2)$ (model under the risk-neutral measure) with constant risk-free interest rate $r$. If the maturity is $T$, then the value of this option at time zero is:
+
+$$
+\sup_{\tau \in \mathcal{T}} \mathbb{E}[e^{-r\tau}(K - S(\tau))^{+}]
+$$
+
+where $\mathcal{T}$ is a set of <em> stopping times </em> taking values in $[0,T]$. This supremum is achieved by an optimal stopping time $\tau^{*}$ that has the form:
+
+$$
+\tau^{*} = \inf\{t\geq 0 ~:~ S(t)\leq B(t)\}
+$$
+for some optimal exercise boundary $B$
+
 <h2> Least squares Monte Carlo method to price a Bermudan option</h2>
 
 
@@ -152,8 +167,8 @@ print(f"With the Longstaff-Schwartz method: {LongS}")
 ```
 
     The zero time price of this Bermudan put option with 50 dates of exercising is: 
-    With the Tsitsilkis-Van Roy method: 0.055158800038482975
-    With the Longstaff-Schwartz method: 0.04643059553856469
+    With the Tsitsilkis-Van Roy method: 0.055051090315761574
+    With the Longstaff-Schwartz method: 0.04601749121790194
 
 
 Now, taking $m$, the number of exercising dates to be ten times bigger the zero time price of the option is:
@@ -177,8 +192,8 @@ print(f"With the Longstaff-Schwartz method: {LongS_10m}")
 ```
 
     The zero time price of this Bermudan put option with 500 dates of exercising is: 
-    With the Tsitsilkis-Van Roy method: 0.05729517017535481
-    With the Longstaff-Schwartz method: 0.045319501107950855
+    With the Tsitsilkis-Van Roy method: 0.0571989761985003
+    With the Longstaff-Schwartz method: 0.04532955906482842
 
 
 Meanwhile the time zero price of European put is:
@@ -310,8 +325,8 @@ print(f" Tsitsitkils Van Roy is {Tsit_VanRoy}")
 print(f"Longstaff Schwartz is {Long_sch}")
 ```
 
-     Tsitsitkils Van Roy is 104.63400546691578
-    Longstaff Schwartz is 102.49314822667444
+     Tsitsitkils Van Roy is 104.68955222407484
+    Longstaff Schwartz is 102.45613897511153
 
 
 Let us use more basis functions such as:
@@ -350,8 +365,8 @@ print(f"Longstaff Schwartz is {Long_sch1}")
 ```
 
     The estimated price for the basis functions {1, x^i,  y^i,  xy, for i =1,2,3} are:
-     Tsitsitkils Van Roy is 103.22672225724922
-    Longstaff Schwartz is 102.74065341264286
+     Tsitsitkils Van Roy is 103.18678264087397
+    Longstaff Schwartz is 102.66718273243379
 
 
 
@@ -368,8 +383,8 @@ print(f"Longstaff Schwartz is {Long_sch2}")
 ```
 
     The estimated price for the basis functions {1, x^i,  y^i,  xy, max(x,y) for i =1,2,3} are:
-     Tsitsitkils Van Roy is 102.69775268900071
-    Longstaff Schwartz is 102.7326909560943
+     Tsitsitkils Van Roy is 102.65694273968214
+    Longstaff Schwartz is 102.82826593835398
 
 
 
@@ -388,8 +403,8 @@ print(f"Longstaff Schwartz is {Long_sch3}")
 ```
 
     The estimated price for the basis functions {1, x^i,  y^i,  xy, x^2y, xy^2 for i =1,2,3} are:
-     Tsitsitkils Van Roy is 103.11513376953486
-    Longstaff Schwartz is 102.80388673481086
+     Tsitsitkils Van Roy is 103.06427716834884
+    Longstaff Schwartz is 102.79508068066268
 
 
 Let us print all the results in a dataframe incluiding estimates for initial stock price of $S_0 = 90$ (in-the-money) and $S_0 = 110$ (out-of-the-money).
@@ -456,10 +471,10 @@ print(results_out_the_money)
 
                                                           T-VR        L-S
     Basis functions                                                      
-    1,S_i, S_i^2, S_i^3                              15.574006  13.657911
-    1,S_i, S_i^2, S_i^3, S_1S_2                      15.206147  13.681587
-    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        15.195438  13.618971
-    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2  14.935285  13.725129
+    1,S_i, S_i^2, S_i^3                              15.688573  13.690532
+    1,S_i, S_i^2, S_i^3, S_1S_2                      15.190783  13.706641
+    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        15.179767  13.668438
+    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2  15.023597  13.716139
     
     
     In-the-money
@@ -467,10 +482,10 @@ print(results_out_the_money)
     
                                                          T-VR       L-S
     Basis functions                                                    
-    1,S_i, S_i^2, S_i^3                              9.478431   7.90573
-    1,S_i, S_i^2, S_i^3, S_1S_2                      9.327884  7.838965
-    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        9.333072  7.868149
-    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2  9.262682  7.869341
+    1,S_i, S_i^2, S_i^3                              9.516701  7.879111
+    1,S_i, S_i^2, S_i^3, S_1S_2                      9.393497  7.864333
+    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        9.329224  7.917016
+    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2   9.29752  7.865125
     
     
     Out-of-the-money
@@ -478,10 +493,10 @@ print(results_out_the_money)
     
                                                           T-VR        L-S
     Basis functions                                                      
-    1,S_i, S_i^2, S_i^3                               23.88303  21.192953
-    1,S_i, S_i^2, S_i^3, S_1S_2                      22.537578  21.152894
-    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        22.429581  21.177957
-    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2  22.342167  21.231335
+    1,S_i, S_i^2, S_i^3                              23.859336   21.12384
+    1,S_i, S_i^2, S_i^3, S_1S_2                      22.544759  21.054129
+    1,S_i, S_i^2, S_i^3, S_1S_2, max(S_1,S_2)        22.373331   21.05731
+    1,S_i, S_i^2, S_i^3, S_1S_2, S_1^2S_2, S_1S_2^2   22.40976   21.18739
 
 
 _______________________________
@@ -890,6 +905,7 @@ K = 1
 x_inf = 2
 x_0 = 1
 T = 1
+s_0 = 1
 
 delta_x_explicit = 0.001
 delta_t_explicit = 5*1e-6
@@ -903,13 +919,37 @@ params = [r, sigma, K, T, x_0, x_inf, delta_t_explicit, delta_x_explicit]
 ```python
 V_explicit, B_explicit = explicit_method_for_American_put(params)
 
-B_explicit[0]
 ```
 
 
 
 
-    0.8623232893236318
+    1.1596578828160327
+
+
+
+
+```python
+
+1/B_explicit[0]
+```
+
+
+
+
+    1.1596578828160327
+
+
+
+
+```python
+1/B_implicit[0]
+```
+
+
+
+
+    1.1612319528662802
 
 
 
@@ -943,6 +983,8 @@ print(f"Time zero price of option computed with the explicit scheme is {V0_expli
 
 ```python
 plt.figure(figsize=(12, 6))
+plt.subplot(121)
+
 plt.plot(grid_x, V_implicit[:, 0], '--', color = "red", label = "Implicit scheme")
 plt.plot(grid_x_explicit, V_explicit[:, 0], '--', color = 'black', label = "Explicit scheme")
 plt.vlines(grid_x[index],ymin= 0, ymax=np.max(V_implicit[:, 0]), linestyles='dashed')
@@ -952,13 +994,26 @@ plt.xticks(list(plt.xticks()[0]) + [grid_x[index]])
 plt.xlabel("x =S/B(0)")
 plt.ylabel("V(0, x)")
 plt.legend()
+
+plt.subplot(122)
+plt.plot(np.arange(0, T+delta_t, delta_t), B_implicit, "--", label = "implicit")
+plt.plot(np.arange(0, T, delta_t_explicit),B_explicit, "--", label = 'explicit')
+plt.hlines(y = K ,xmin=0, xmax=T, color = 'black', linestyles="dashed", label = f"K = { K}")
+plt.xlabel("t")
+plt.ylabel("B(t)")
+plt.legend()
+plt.title("optimal exercising boundary")
+
 plt.show()
+
+
+
 
 ```
 
 
     
-![png](AmericanBermudanOptions_files/AmericanBermudanOptions_67_0.png)
+![png](AmericanBermudanOptions_files/AmericanBermudanOptions_71_0.png)
     
 
 
