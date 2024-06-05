@@ -18,7 +18,7 @@
 
 <h1>Pricing Options</h1>
 
-<a href="https://colab.research.google.com/github/binaria010/Pricing-Theory/blob/main/pricing_under_binomial.ipynb"> Colab file </a>.
+<a href="https://colab.research.google.com/github/binaria010/Pricing-Theory/blob/main/pricing_under_binomial.ipynb" target="_blank"> Colab file </a>
 
 The following is a toy example to understand the <strong> Risk Neutral Measure </strong> for pricing derivative securities. Under this risk neutral measure it is guaranteed a no arbitrage price.
 
