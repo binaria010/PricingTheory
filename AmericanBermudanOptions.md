@@ -965,37 +965,6 @@ V_explicit, B_explicit = explicit_method_for_American_put(params)
 
 
 
-
-    1.1596578828160327
-
-
-
-
-```python
-
-1/B_explicit[0]
-```
-
-
-
-
-    1.1596578828160327
-
-
-
-
-```python
-1/B_implicit[0]
-```
-
-
-
-
-    1.1612319528662802
-
-
-
-
 ```python
 def time_zero_price_American_put(s_0,K, V, B, grid_x):
     
