@@ -78,7 +78,7 @@ for some basis functions $\psi_r$ to be chosen (in the code below we will be cal
         
     for $\quad j=1,\dots, N_{sim} $.
 
-* Set $\widehat{V}_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$
+* Set $\widehat V_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$
 
 
 
