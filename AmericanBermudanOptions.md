@@ -62,7 +62,7 @@ $$
 $$
 for some basis functions $\psi_r$ to be chosen (in the code below we will be calling these functions as <em>features</em>) and regression parameters $\beta_{ir}$. The regression-based algorithm is as follows:
 
-* Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m)$ for  j=1,\dots N_{sim}\}$.
+* Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m):\quad j=1,\dots N_{sim}\}$.
 
 * At terminal nodes set $\widehat{V_{j,m}} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
 
