@@ -38,7 +38,48 @@ $$
 $$
 for some optimal exercise boundary $B$
 
-<h2> Least squares Monte Carlo method to price a Bermudan option</h2>
+<h3> Least squares Monte Carlo method to price a Bermudan option</h3>
+
+Since a Bermudan option is one that have a finite number of exercising dates, the problem of computing its value can be solved by means of <a href = "https://en.wikipedia.org/wiki/Dynamic_programming"><em>dynaminc programming.</em></a> The formulation is as following:
+
+Let $h_i$ denote the payoff function for exercising at time $t_i$ for $i=1,\dots, m$ and let $V_i(x)$ denote the value of the option at time $t_i$ given that he stock value is $S(t_i) = x$ (asumming that the option has not been previously exercised). Then, the price at time zero is $V_0(x_0)$ and this value is determined by the following recurssion:
+
+$$
+\begin{align*}
+V_m(x) &= D_m(x)h_m(x)\\
+V_{i-1}(x) &= \max\{D_{i-1}(x)h_{i-1}(x), \mathbb{E}[D_{i}(x)V_i(S(t_i)) \vert S(t_{i-1}) = x]\}, \quad i=1,2,\dots, m
+\end{align*}
+$$
+
+where the discount factor is $D_i(S(t_i)) = \exp\left(-\int_{0}^{t_i}r(u)du\right)$ and $r$ is the interest rate process which will be assumed to be constant in the examples below. Note that all the values are expressed in time zero dollars since we are discounting up to time $t=0$. 
+
+The formulas given above say state that: the option value at expiration time $T=t_m$ is the discounted payoff $h$ at this time; the option value at any other exercise date is the maximum of the inmediate exercise value and the expected presente value of continuing of the <em>continuation value</em> $C_i := \mathbb{E}[D_{i}(x)V_i(S(t_i)) \vert S(t_{i-1}) = x]$. 
+
+The <em>regression method</em> followed by Tsitsiklis-Van Roy and Longstaff-Schwartz posit an expression for the continuation value:
+
+$$
+\mathbb{E}[D_{i}(x)V_i(S(t_i)) \vert S(t_{i-1}) = x] = \sum_{r=1}^M\beta_{ir}\psi_r(x)
+$$
+for some basis functions $\psi_r$ to be chosen (in the code below we will be calling these functions as <em>features</em>) and regression parameters $\beta_{ir}$. The regression-based algorithm is as follows:
+
+* Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m)~ j=1,\dots N_{sim}\}$.
+
+* At terminal nodes set $\hat{V}_{j,m} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
+
+* Apply backward induction: for $i = m-1,m-2,\dots, 1$
+    * given the estimated values $\hat{V}_{j, i=1},~j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
+    
+    * then set:
+    
+    |Tsitsiklis-Van Roy                      | Longstaff-Schwartz |
+    |----------------------------------------| -------------------|
+    $\hat{V}_{j, i} = \max\{h_i(S_j(t_i)), \hat{C}_i(S_j(t_i))\}$ | $$\hat{V}_{j, i} = \begin{cases}e^{-rt_i}h_i(S_j(t_i)), &\quad \text{if } e^{-rt_i}h_i(S_j(t_i)) \geq \hat{C}_i(S_j(t_i))\\ \hat{V}_{j, i+1} & \quad \text{otherwise}\end{cases}$$
+    
+        
+    for $\quad j=1,\dots, N_{sim} $.
+
+* Set $\hat{V}_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$
+
 
 
 ```python
@@ -162,7 +203,7 @@ LongS = time_zero_price_Bermuda_Put(X, payoff=payoff, T=T, r=r, features=Phi, me
 
 ```python
 print(f"The zero time price of this Bermudan put option with {m} dates of exercising is: ")
-print(f"With the Tsitsilkis-Van Roy method: {Tsit_VR}")
+print(f"With the Tsitsiklis-Van Roy method: {Tsit_VR}")
 print(f"With the Longstaff-Schwartz method: {LongS}")
 ```
 
@@ -187,7 +228,7 @@ LongS_10m = time_zero_price_Bermuda_Put(X, payoff=payoff, T=T, r=r, features=Phi
 
 ```python
 print(f"The zero time price of this Bermudan put option with {10*m} dates of exercising is: ")
-print(f"With the Tsitsilkis-Van Roy method: {Tsit_VR_10m}")
+print(f"With the Tsitsiklis-Van Roy method: {Tsit_VR_10m}")
 print(f"With the Longstaff-Schwartz method: {LongS_10m}")
 ```
 
@@ -1013,11 +1054,11 @@ plt.show()
 
 
     
-![png](AmericanBermudanOptions_files/AmericanBermudanOptions_71_0.png)
+![png](AmericanBermudanOptions_files/AmericanBermudanOptions_73_0.png)
     
 
 
-Compare the result of the time zero price of the option for an initial value of the stock given by $s_0$ with the values found by Tsitsilkis-Van Roy and Longstaff Schwartz method implemented in the beginning of this notebook. We note in particular that the Tsitsilkis Van Roy method seems to over estimate the value.
+Compare the result of the time zero price of the option for an initial value of the stock given by $s_0$ with the values found by Tsitsiklis-Van Roy and Longstaff Schwartz method implemented in the beginning of this notebook. We note in particular that the Tsitsiklis Van Roy method seems to over estimate the value.
 
 --------------------------------------------
 -----------------------------------------------
