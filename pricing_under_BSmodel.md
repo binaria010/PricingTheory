@@ -17,7 +17,7 @@
 
 <h2> Black-Scholes Model </h2>
 
-<a href="https://colab.research.google.com/github/binaria010/Pricing-Theory/blob/main/pricing_under_BSmodel.ipynb> Colab file </a>.
+<a href="https://colab.research.google.com/github/binaria010/Pricing-Theory/blob/main/pricing_under_BSmodel.ipynb"> Colab file </a>.
 
 There are at least to different approaches to arrive at this model. One is by getting a partial differential  equation for the price of an option and the other is by the Martingale Representation Theorem (pricing under Risk-Neutral Measure)  which gives us directly the value of the option with no need of solving a PDE. The price of the latter approach is that the value of the option is expressed as a conditional expectation which is sometimes more difficult to compute/estimate than a PDE. Also, the Martingale setting allows us to arrive to a formula for the value of an option whose payoff at maturity time could be path-dependent and whose underlying asset follows a Generalized Brownian Motion, that is, the stock price has non constant mean return and volatility processes.
 
