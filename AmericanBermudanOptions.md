@@ -60,6 +60,7 @@ The <em>regression method</em> followed by Tsitsiklis-Van Roy and Longstaff-Schw
 $$
 \mathbb{E}[D_{i}(x)V_i(S(t_i)) \vert S(t_{i-1}) = x] = \sum_{r=1}^M\beta_{ir}\psi_r(x)
 $$
+
 for some basis functions $\psi_r$ to be chosen (in the code below we will be calling these functions as <em>features</em>) and regression parameters $\beta_{ir}$. The regression-based algorithm is as follows:
 
 * Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m):\quad j=1,\dots N_{sim}\}$.
