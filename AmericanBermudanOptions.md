@@ -64,16 +64,16 @@ for some basis functions $\psi_r$ to be chosen (in the code below we will be cal
 
 * Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m):\quad j=1,\dots N_{sim}\}$.
 
-* At terminal nodes set $\widehat{V_{j,m}} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
+* At terminal nodes set $\widehat V_{j,m} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
 
 * Apply backward induction: for $i = m-1,m-2,\dots, 1$
-    * given the estimated values $\widehat{V_{j, i+1}},\quad j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
+    * given the estimated values $\widehat V_{j, i+1},\quad j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
     
     * then set:
     
     |Tsitsiklis-Van Roy                      | Longstaff-Schwartz |
     |----------------------------------------| -------------------|
-    $\hat{V}_{j, i} = \max\{h_i(S_j(t_i)), \hat{C}_i(S_j(t_i))\}$ | $$\hat{V}_{j, i} = \begin{cases}e^{-rt_i}h_i(S_j(t_i)), &\quad \text{if } e^{-rt_i}h_i(S_j(t_i)) \geq \hat{C}_i(S_j(t_i))\\ \hat{V}_{j, i+1} & \quad \text{otherwise}\end{cases}$$
+    $\widehat V_{j, i} = \max\{h_i(S_j(t_i)), \hat{C}_i(S_j(t_i))\}$ | $$\widehat V_{j, i} = \begin{cases}e^{-rt_i}h_i(S_j(t_i)), &\quad \text{if } e^{-rt_i}h_i(S_j(t_i)) \geq \hat{C}_i(S_j(t_i))\\ \hat{V}_{j, i+1} & \quad \text{otherwise}\end{cases}$$
     
         
     for $\quad j=1,\dots, N_{sim} $.
