@@ -17,6 +17,8 @@
 
 <h1> Pricing American/Bermudan options. </h1>
 
+<a href="https://colab.research.google.com/github/binaria010/Pricing-Theory/blob/main/AmericanBermudanOptions.ipynb"> Colab file </a>.
+
 In this notebook we implement some of the methods for pricing american/bermudan options. The first approach is to price a bermudan option by means of Least Square Monte Carlo method which roughly speaking consists on estimating the price by estimating the expected value using a linear regression with a specified set of basis functions. Since, one can se an american option as a limit of a bermuda option (a limit to infinity of the exercise dates), then this method allows us, by taking the number of exercising dates to be big, to price american options as well.
 
 The second approach is the PDE method. We present the partial differential equation with free boundary  and implement implicit and explicit schemes to find approximate solutions. 
