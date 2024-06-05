@@ -64,7 +64,7 @@ for some basis functions $\psi_r$ to be chosen (in the code below we will be cal
 
 * Simulate $N_{sim}$ independent paths $\{S_j(t_1), S_j(t_2),\dots, S_j(t_m)~ j=1,\dots N_{sim}\}$.
 
-* At terminal nodes set $\hat{V}_{j,m} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
+* At terminal nodes set $\widehat{V}_{j,m} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
 
 * Apply backward induction: for $i = m-1,m-2,\dots, 1$
     * given the estimated values $\hat{V}_{j, i=1},~j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
@@ -78,7 +78,7 @@ for some basis functions $\psi_r$ to be chosen (in the code below we will be cal
         
     for $\quad j=1,\dots, N_{sim} $.
 
-* Set $\hat{V}_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$
+* Set $\widehat{V}_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$
 
 
 
