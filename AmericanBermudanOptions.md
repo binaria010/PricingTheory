@@ -67,7 +67,7 @@ for some basis functions $\psi_r$ to be chosen (in the code below we will be cal
 * At terminal nodes set $\widehat{V_{j,m}} = e^{-rt_m}h_m(S_j(t_m))$ for $j=1,\dots, N_{sim}$
 
 * Apply backward induction: for $i = m-1,m-2,\dots, 1$
-    * given the estimated values $\hat{V}_{j, i+1},\quad j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
+    * given the estimated values $\widehat{V_{j, i+1}},\quad j=1,\dots,N_{sim}$, use the regression formula to calculate $\hat{\beta}_i$ and get the estimated continuation value $\hat{C}_i(S_j(t_i))$ 
     
     * then set:
     
