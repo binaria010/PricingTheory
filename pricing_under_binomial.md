@@ -175,22 +175,20 @@ then the algorithm is as follows:
 
 
 
-<ol>
 
-    <il> Compute the option price at terminal node $N$, which is simply the payoff function, i.e. $V^{N} = g(S_N)$. This random variable takes values:
+1. Compute the option price at terminal node $N$, which is simply the payoff function, i.e. $V^{N} = g(S_N)$. This random variable takes values:
         
-        $$
-        V_{k}^{N} = g(u^{N-k}d^{k}S_0)\quad\text{for each } k =0,1,\dots, N
-        $$
-    </il>
-    <il> Loop backward in time: for $n=N-1,N-2,\dots, 0$ compute
+$$
+V_{k}^{N} = g(u^{N-k}d^{k}S_0)\quad\text{for each } k =0,1,\dots, N
+$$
 
-        $$
-            V_k^{n} = e^{-r}(qV_k^{n+1} +(1-q)V_{k+1}^{n+1}) \quad\text{for each } k =0,1,\dots, n
-        $$
-    </il>
-    <il> The time zero price is $V_0^{0}$    </il>
-</ol>
+2. Loop backward in time: for $n=N-1,N-2,\dots, 0$ compute
+
+$$
+    V_k^{n} = e^{-r}(qV_k^{n+1} +(1-q)V_{k+1}^{n+1}) \quad\text{for each } k =0,1,\dots, n
+$$
+
+3. The time zero price is $V_0^{0}$ 
 
 
 ```python
