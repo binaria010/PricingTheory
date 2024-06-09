@@ -1,6 +1,6 @@
 <h1> Risk-Neutral Pricing</h1>
 
-<a href = "https://colab.research.google.com/drive/1zdH7EShffACFrIaVI8V8GdVpTQewsLKr"> Colab file</a>
+<a href = "https://colab.research.google.com/drive/1zdH7EShffACFrIaVI8V8GdVpTQewsLKr" target="_blank"> Colab file</a>
 
 In this section we will arrive at a formula for the price of an option whose payoff at maturity time $T$ is some function $V(T)$. As a particular case of this formula we get the function $c(t,x)$ obtained above for the price of an European call option whose underlying asset price is a geometric brownian motion (The Black-Scholes model).
 
