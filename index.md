@@ -29,7 +29,7 @@
   <li><a href="pricing_under_BSmodel">
     Pricing under the Black-Scholes model.</a>
   </li>
-  <li><a href="pricing_under_risk-neutral">
+  <li><a href="RiskNeutralMeasure">
     Pricing under the risk-neutral measure.</a>
   </li>
   <li><a href = "AmericanBermudanOptions"> 
