@@ -16,6 +16,8 @@
 
 <h1> Pricing Options </h1>
 
+<a href = "https://colab.research.google.com/drive/1zlGL9EoEjpm0BsOzdcr8NiEBSo0s3BLX" target="_blank"> Colab file</a>
+
 The following is a toy example to understand the <strong> Risk Neutral Measure </strong> for pricing derivative securities. Under this risk neutral measure it is guaranteed a no arbitrage price.
 
 First, let us define this notion of arbitrage:
