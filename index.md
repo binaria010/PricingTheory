@@ -13,6 +13,15 @@
   <meta name="google-site-verification" content="kuks5e4as6qBaGVCSzmHkQJa5Tss89_g5DmRXeUi7K8" />
   <meta name="author" content="Juliana Osorio">
 
+<style>
+        body {
+            background-image: url('brownian_black_scholes.png');
+            background-size: cover; /* Make the background cover the entire page */
+            background-repeat: no-repeat; /* Prevent the background image from repeating */
+            background-position: center; /* Center the background image */
+        }
+    </style>
+
 </head>
 
 
