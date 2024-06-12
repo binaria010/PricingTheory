@@ -7475,7 +7475,8 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-  <button id="buttons" onclick="topFunction()" title="Go to top">Top</button>
+
+<button id="buttons" onclick="topFunction()" title="Go to top">Top</button>
 
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
@@ -8778,7 +8779,8 @@ $$<p>where ${\bf V}^i = (V_2^{i}, V_3^{i}, \dots, V_{N_x-1}^{i})$ for $i =N_t-1,
     <span class="n">sub_diag_prime</span> <span class="o">=</span> <span class="n">alpha_prime</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span>
     <span class="n">sub_sub_diag_prime</span> <span class="o">=</span> <span class="n">beta_prime</span><span class="p">[</span><span class="mi">2</span><span class="p">:]</span>
 
-    <span class="n">A_prime</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">diags</span><span class="p">([</span><span class="n">main_diag_prime</span><span class="p">,</span> <span class="n">sub_diag_prime</span><span class="p">,</span> <span class="n">sub_sub_diag_prime</span><span class="p">],</span> <span class="n">offsets</span><span class="o">=</span><span class="n">offsets</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">M</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
+    <span class="n">A_prime</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">sparse</span><span class="o">.</span><span class="n">diags</span><span class="p">([</span><span class="n">main_diag_prime</span><span class="p">,</span> <span class="n">sub_diag_prime</span><span class="p">,</span> <span class="n">sub_sub_diag_prime</span><span class="p">],</span>
+                                  <span class="n">offsets</span><span class="o">=</span><span class="n">offsets</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">M</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">.</span><span class="n">toarray</span><span class="p">()</span>
 
     <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">A_prime</span><span class="p">,</span> <span class="n">f_prime</span>
 
