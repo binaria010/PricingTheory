@@ -7650,9 +7650,23 @@ $$<p>for some basis functions $\psi_r$ to be chosen (in the code below we will b
 <li><p>then set:</p>
 </li>
 </ul>
-<p>|Tsitsiklis-Van Roy                      | Longstaff-Schwartz |
-  |----------------------------------------| -------------------|
-  $\widehat V_{j, i} = \max\{h_i(S_j(t_i)), \widehat C_i(S_j(t_i))\}$ | $$\widehat V_{j, i} = \begin{cases}e^{-rt_i}h_i(S_j(t_i)), &amp;\quad \text{if } e^{-rt_i}h_i(S_j(t_i)) \geq \widehat C_i(S_j(t_i))\\ \widehat V_{j, i+1} &amp; \quad \text{otherwise}\end{cases}$$</p>
+<table style="border:1px solid black;">
+<tr>
+<th style="border:1px solid black;">Tsitsiklis-Van Roy </th>
+<th style="border:1px solid black;">Longstaff-Schwartz </th>
+</tr>
+<tr>
+<td style="border:1px solid black;">
+  $\widehat V_{j, i} = \max\{h_i(S_j(t_i)), \widehat C_i(S_j(t_i))\}$
+  </td>
+<td style="border:1px solid black;"> 
+  $\widehat V_{j, i} = \begin{cases}e^{-rt_i}h_i(S_j(t_i)), &amp;\quad \text{if } e^{-rt_i}h_i(S_j(t_i)) \geq \widehat C_i(S_j(t_i))\\ \widehat V_{j, i+1} &amp; \quad \text{otherwise}\end{cases}$
+  </td>
+<tr>
+</tr></tr></table>
+
+
+	
 <p>for $\quad j=1,\dots, N_{sim} $.</p>
 </li>
 <li><p>Set $\widehat V_0 = \frac{1}{N_{sim}}\sum_{j=1}^{N_{sim}}V_{j,1}$</p>
