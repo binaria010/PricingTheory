@@ -7704,9 +7704,9 @@ $$
 
 &amp; c(T,x) = (x-K)^{+}
 \end{cases}
-$$<p>This is known as the Blac-Scholes Merton equation.
+$$<p>This is known as the Black-Scholes Merton equation.
 Suppose we have found this function. If an investor starts with inital capital $X(0) =c(0,S(0))$ and uses the hedge $\Delta(t)=c_x(t,S(t))$, then $X(t) =c(t,S(t))$ for all $t\in[0, T)$. Now, taking the limit $t\uparrow T$ and using the continuity of $X$ and $c$ one can conclude that $X(T) = c(T, S(T))=(S(T)-K)^{+}$. This means that the short postion has been successfully hedge. No matter what path the stock price follows, at expiration date the agent hedging the short position has a portfolio whose value agrees with the derivative security payoff.
-By the use of some methods from partial differential equations it is possible to arrive at a closed form of the solution of BS. In the next section we will arrive to the same expression for the price of the option by means of the Risk Neutral Measure.</p>
+By the use of some methods from partial differential equations it is possible to arrive at a closed form of the solution of BS. <a  href = "RiskNeutralMeasure.html#example-call"> Here </a> we  arrive to this expression for the price of the option by means of the Risk Neutral Measure.</p>
 <p>The solution of BS is:</p>
 $$
 c(t,x) = x\Phi(d_{+}(T-t, x)) - Ke^{-r(T-t)}\Phi(d_{-}(T-t, x)), \quad t\in [0, T), \quad x&gt;0
