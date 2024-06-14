@@ -7593,9 +7593,10 @@ Also, in a more general case for the stock price, such as a non constant volatil
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3> Examples. </h3>
-<ol>
-<li><span id="zerocouponCIR">Price interest rate products</span>: A zero-coupon  bond is a contract promising to pay a certain "face" amount which we take to be 1 at a fixed maturity date $T$. Prior to that the bond makes no payments. The risk-neutral pricing formula says that the discounted price of this bond should be a Martingale under the risk-neutral measure. Then for $t\in[0,T]$, the price of the bond $B(t,T)$ satisfies:</li>
-</ol>
+
+<h4 id="zerocouponCIR"> 1. Price interest rate products</h4>
+A zero-coupon  bond is a contract promising to pay a certain "face" amount which we take to be 1 at a fixed maturity date $T$. Prior to that the bond makes no payments. The risk-neutral pricing formula says that the discounted price of this bond should be a Martingale under the risk-neutral measure. Then for $t\in[0,T]$, the price of the bond $B(t,T)$ satisfies:</li>
+
 $$
 D(t)B(t,T) = \widetilde{\mathbb{E}}\left[D(T)\vert\mathcal{F}(t) \right]
 $$<p>Then, the formula for the price is:</p>
@@ -8005,7 +8006,7 @@ Monte Carlo estimator :0.8677744603052847
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3> Price of an Asian option.</h3>
+<h4 id = "AsianFeynmanKac" > 2. Price of an Asian option.</h4>
 <p>Another application of Feynman-Kac is to get a pde for the price of an Asian option whose payoff is path-dependent.</p>
 <p>Again, consider a stock whose price follows a geometric brownian motion. An <em>Asian</em> option is a derivative security whose payoff at maturity time $T$ is:</p>
 $$
