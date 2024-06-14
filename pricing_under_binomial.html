@@ -7473,15 +7473,8 @@ a.anchor-link {
     white-space: normal;
   }
 </style>
-
-
-<!-- End of mermaid configuration -->
-</head>
-
+<!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-
-<button id="buttons" onclick="topFunction()" title="Go to top">Top</button>
-    
 <main>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -7502,10 +7495,10 @@ a.anchor-link {
   </script>
 <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
 <meta content="kuks5e4as6qBaGVCSzmHkQJa5Tss89_g5DmRXeUi7K8" name="google-site-verification">
-</meta>
 <link href="custom.css" rel="stylesheet"/>
+</meta></head>
+<p><button id="buttons" onclick="topFunction()" title="Go to top">Top</button></p>
 <script src="myJavaScripts.js" type="text/javascript"></script>
-</head>
 </div>
 </div>
 </div>
@@ -7516,7 +7509,7 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://binaria010.github.io/PricingTheory/">Table of Contents</a></p>
+<p><a href="https://binaria010.github.io/Pricing-Theory/">Table of Contents</a></p>
 </div>
 </div>
 </div>
@@ -7527,8 +7520,8 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 style = "text-align: center;"> Pricing options under binomial model </h1>
-<div style= "background-image: url('binomial_tree.jpg');
+<h1> Pricing options under binomial model.</h1>
+<div style="background-image: url('binomial_tree.jpg');
   background-size: cover; 
   background-repeat: no-repeat; 
   background-position: center; 
@@ -7538,36 +7531,34 @@ a.anchor-link {
   padding: 20px;
   justify-content: center;
   background-blend-mode: lighten;">
-  
-  </div>
-    
+</div>
 <p>The following is a toy example to understand the <strong> Risk Neutral Measure </strong> for pricing derivative securities. Under this risk neutral measure it is guaranteed a no arbitrage price.</p>
 <p>First, let us define this notion of arbitrage:</p>
-<p><strong>Definition </strong> An arbitrage is a portfolio value processe $X(t)$ satisfying that $X(0)=0$ and for some time $T&gt;0$:</p>
+<p><strong>Definition </strong> An arbitrage is a portfolio value processe $X_t$ satisfying that $X(0)=0$ and for some time $T&gt;0$:</p>
 $$
-\mathbb{P}(X(T) \geq 0)=1\quad\text{and }\quad \mathbb{P}(X&gt;0)&gt;0.
+\mathbb{P}(X_T \geq 0)=1\quad\text{and }\quad \mathbb{P}(X&gt;0)&gt;0.
 $$<h5> Toy Example</h5>
-<p>Consider a one-period model, the stock a time 0 has price $S(0)=4$, at time $t=1$ with probability $p$ it goes up by a factor of $u=2$ and with probability $1-p$ it goes down by a factor $d=1/2$. The interest rate is $r=1/4$. Therefore</p>
+<p>Consider a one-period model, the stock a time 0 has price $S_0=4$, at time $t=1$ with probability $p$ it goes up by a factor of $u=2$ and with probability $1-p$ it goes down by a factor $d=1/2$. The interest rate is $r=1/4$. Therefore</p>
 $$
-S(1) = \begin{cases}
-2*S(0) = 8 &amp;\quad\text{with probability } p\\
-0.5*S(0) = 2 &amp;\quad\text{with probability } 1-p
+S_1 = \begin{cases}
+2*S_0 = 8 &amp;\quad\text{with probability } p\\
+0.5*S_0 = 2 &amp;\quad\text{with probability } 1-p
 \end{cases}
 $$<p>Consider an European call option with maturity of $T=1$ and strike $K=5$. The payoff is therefore</p>
 $$
-(S(1) - K)^{+} = \begin{cases}
+(S_1 - K)^{+} = \begin{cases}
 (8-5)^{+} = 3 &amp;\quad\text{with probability } p\\
 (2-5)^{+} = 0 &amp;\quad\text{with probability } 1-p
 \end{cases}
-$$<p>The goal is to determine a price for this option. To achieve this, consider the following situation: You start with an initial wealth $X_0=1.2$ and buy $\Delta_0 =0.5$ shares of the stock whose price is $S$. Since the stock at time zero costs $4$ per share, you must use your initial wealth $X_0$ and borrow and additional of $0.80$ to do this. This leave you with a cash position of $X_0 - \Delta_0 S(0) = -0.8$ (a debt of 0.8 to the money market). At time 1 your cash position will be $(1+r)(X_0 - \Delta_0 S(0)) = -1$ (i.e the cash at time 0 with rate growth of $r =1/4$) This means that at time 1 you will have a debt of 1 to the money market.</p>
+$$<p>The goal is to determine a price for this option. To achieve this, consider the following situation: You start with an initial wealth $X_0=1.2$ and buy $\Delta_0 =0.5$ shares of the stock whose price is $S$. Since the stock at time zero costs $4$ per share, you must use your initial wealth $X_0$ and borrow and additional of $0.80$ to do this. This leave you with a cash position of $X_0 - \Delta_0 S_0 = -0.8$ (a debt of 0.8 to the money market). At time 1 your cash position will be $(1+r)(X_0 - \Delta_0 S_0) = -1$ (i.e the cash at time 0 with rate growth of $r =1/4$) This means that at time 1 you will have a debt of 1 to the money market.</p>
 <p>On the other hand, at time 1 you will have your stock valued at $\Delta_0 S_1$ , that is, with probability $p$ it will be $\Delta_0 *S_1 = 0.5*8 = 4$ and with probability $1-p$ it will be valued at $\Delta_0 *S_1 = 0.5*2 =1$, therefore your wealth at time 1 will be</p>
 $$
-X_1 = \Delta_0 S(1) + (1+r)(X_0 - \Delta_0 S(0))=\begin{cases}
+X_1 = \Delta_0 S_1 + (1+r)(X_0 - \Delta_0 S_0)=\begin{cases}
 4 + (-1)= 3 &amp;\quad\text{with probability }p\\
 1 + (-1)=0 &amp;\quad\text{with probability } 1 - p
 \end{cases}
 $$<p>That is, your portofolio $X$ at time 1 has the same value as the call option. We say that we have <em> replicated the option</em> by trading in the stock and money markets.</p>
-<p>The initial wealth $X_0=1.20$ needed to set up the replicating portfolio $X$ is the <em>no-arbitrage price of the option at time zero. </em> For, if one could sell the option for more than 1.2, say, for 1.21, then the seller could invest the excess 0.01 in the money market and use the remaining 1.2 to replicate the option. At time 1 the seller would be able to pay off the option regardeless of the value of the stock a time 1, $S(1)$, and still have the remaining $(1+r)*0.01 = 0.0125$ resulting from the money market investment. This is an arbitrage because the seller of the option needs no money initially and without risk of loss has 0.0125 at time 1. On the other hand if one could buy the option for less than the $X_0 =1.2$, say, for 1.19 then one should buy the option and set up the replicating portfolio in reverse. That is, we sell-short $\Delta_0=1/2$ of the stock (we receive 2 dollars) at time 0 then with 1.19 buy the option, invest 0.8 in the money market and put the ramaining 0.01 in a separate money market. At time 1 if the stock goes up then the option pays 3 and the 0.8 is worth 1, thus with this 4 you are able to close the short position. On the contrary, if the stock goes down the option pays 0 and the 0.8 is at time 1 worth 1 dollar which is also the value you have to pay to close the short position. In either case you will end up with 0.0125 which is the 0.01 in the separate money market whose value at time 1 is $(1+r)0.01=0.0125$. Therefore there is again arbitrage.</p>
+<p>The initial wealth $X_0=1.20$ needed to set up the replicating portfolio $X$ is the <em>no-arbitrage price of the option at time zero. </em> For, if one could sell the option for more than 1.2, say, for 1.21, then the seller could invest the excess 0.01 in the money market and use the remaining 1.2 to replicate the option. At time 1 the seller would be able to pay off the option regardeless of the value of the stock a time 1, $S_1$, and still have the remaining $(1+r)*0.01 = 0.0125$ resulting from the money market investment. This is an arbitrage because the seller of the option needs no money initially and without risk of loss has 0.0125 at time 1. On the other hand if one could buy the option for less than the $X_0 =1.2$, say, for 1.19 then one should buy the option and set up the replicating portfolio in reverse. That is, we sell-short $\Delta_0=1/2$ of the stock (we receive 2 dollars) at time 0 then with 1.19 buy the option, invest 0.8 in the money market and put the ramaining 0.01 in a separate money market. At time 1 if the stock goes up then the option pays 3 and the 0.8 is worth 1, thus with this 4 you are able to close the short position. On the contrary, if the stock goes down the option pays 0 and the 0.8 is at time 1 worth 1 dollar which is also the value you have to pay to close the short position. In either case you will end up with 0.0125 which is the 0.01 in the separate money market whose value at time 1 is $(1+r)0.01=0.0125$. Therefore there is again arbitrage.</p>
 </div>
 </div>
 </div>
@@ -7578,20 +7569,20 @@ $$<p>That is, your portofolio $X$ at time 1 has the same value as the call optio
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>How one would get to this fair price of 1.20?   To determine the price  at time 0 of this opton, $V_0$ suppose we begin with wealth $X_0$ and buy $\Delta_0$ shares of the stock $S$ ($X_0$ and $\Delta_0$ unknown). Then the cash position at time 0 is $X_0 - \Delta_0*S(0)$ and thus, the value of this portfolio (of stock and money market) at time 1 is:</p>
+<p>How one would get to this fair price of 1.20?   To determine the price  at time 0 of this opton, $V_0$ suppose we begin with wealth $X_0$ and buy $\Delta_0$ shares of the stock $S$ ($X_0$ and $\Delta_0$ unknown). Then the cash position at time 0 is $X_0 - \Delta_0*S_0$ and thus, the value of this portfolio (of stock and money market) at time 1 is:</p>
 $$
-X_1 = \Delta_0*S(1) +(1+r)(X_0 - \Delta_0*S(0)) = (1+r)X_0 + \Delta_0(S(1) -(1+r)S(0))
+X_1 = \Delta_0*S_1 +(1+r)(X_0 - \Delta_0*S_0) = (1+r)X_0 + \Delta_0(S_1 -(1+r)S_0)
 $$<p>The goal is to choose $X_0$ and $\Delta_0$ so that at time 1 the value of this portfolio and the value of the option coincide. If we denote $V_1$ the value of the option at time 1, we know that its value is with probability $p$ 3 dollars and with probability $1-p$ 0 dollars (this is because the maturity is 1 and at this final time the value of the option is its payoff). Thus we llok for $X_0,, \Delta_0$ such that</p>
 $$
-X_1 = (1+r)X_0 + \Delta_0(S(1) -(1+r)S(0)) = V_1
+X_1 = (1+r)X_0 + \Delta_0(S_1 -(1+r)S_0) = V_1
 $$<p>which is equivalent to</p>
 $$
-X_0 + \Delta_0\left(\frac{1}{1+r}S(1) -S(0)\right) = \frac{1}{1+r}V_1
-$$<p>Recall that $S(1)$ is random and so  are $V_1, X_1$. The random variable $S(1)$ can take two possible values: $S(0)*u$ and $S(0)*d$ where $u=2,~ d= \frac{1}{2}$ with probabilities $p$ and $1-p$ respectively. Also, $V_1$ take the values of 3 and 0 with this probabilities. Then we have two equations:</p>
+X_0 + \Delta_0\left(\frac{1}{1+r}S_1 -S_0\right) = \frac{1}{1+r}V_1
+$$<p>Recall that $S_1$ is random and so  are $V_1, X_1$. The random variable $S_1$ can take two possible values: $S_0*u$ and $S_0*d$ where $u=2,~ d= \frac{1}{2}$ with probabilities $p$ and $1-p$ respectively. Also, $V_1$ take the values of 3 and 0 with this probabilities. Then we have two equations:</p>
 $$
 \begin{aligned}
-X_0 + \Delta_0\left(\frac{1}{1+r}S(0)*u -S(0)\right) =&amp; \frac{1}{1+r}3  \qquad\text{(1)}\\
-X_0 + \Delta_0\left(\frac{1}{1+r}S(0)*d -S(0)\right) =&amp; \frac{1}{1+r}0  \qquad\text{(2)}
+X_0 + \Delta_0\left(\frac{1}{1+r}S_0*u -S_0\right) =&amp; \frac{1}{1+r}3  \qquad\text{(1)}\\
+X_0 + \Delta_0\left(\frac{1}{1+r}S_0*d -S_0\right) =&amp; \frac{1}{1+r}0  \qquad\text{(2)}
 \end{aligned}
 $$
 </div>
@@ -7612,7 +7603,7 @@ X_0 + \Delta_0\left(\frac{1}{1+r}(q*S_0*u + (1-q)*S_0*d) -S_0\right) = \frac{1}{
 $$<p>If $q$ is chosen such that $S_0 = \frac{1}{1+r}(q*S_0*u + (1-q)*S_0*d)$ then we will get from (3) that:</p>
 $$
 X_0 =  \frac{1}{1+r}(3q +0(1-q))
-$$<p>And 
+$$<p>And
 $$
 \Delta_0 = \frac{3 - 0}{S_0*u - S_0*d} \qquad \text{Delta-Hedging formula}
 $$</p>
@@ -7632,10 +7623,10 @@ $$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>This new probability law is called the <strong> Risk Neutral Measure </strong>  (see definition <a href= "RiskNeutralMeasure.html#def-risk-neutral">here</a>). Observe that, by its very own definition:</p>
+<p>This new probability law is called the <strong> Risk Neutral Measure </strong>(see definition <a href="RiskNeutralMeasure.html#def-risk-neutral">here</a>). Observe that, by its very own definition:</p>
 $$
-S(0) = \frac{1}{(1+r)^0}S(0) = \frac{1}{1+r}(q*S(0)*u + (1-q)*S(0)*d) =\frac{1}{1+r}\mathbb{E}_q(S(1)\vert S(0)) 
-$$<p>that is, the discounted expected value of $S(1)$ given the value $S(0)$, coincides with (the discounted)  $S(0)$, meaning that the stock price is a Martingale process. From the equation for $X_1$, by taking expected value with respect to the probability law $q$ we can conclude the same for the price process of the portfolio, i.e:</p>
+S_0 = \frac{1}{(1+r)^0}S_0 = \frac{1}{1+r}(q*S_0*u + (1-q)*S_0*d) =\frac{1}{1+r}\mathbb{E}_q(S_1\vert S_0)
+$$<p>that is, the discounted expected value of $S_1$ given the value $S_0$, coincides with (the discounted)  $S_0$, meaning that the stock price is a Martingale process. From the equation for $X_1$, by taking expected value with respect to the probability law $q$ we can conclude the same for the price process of the portfolio, i.e:</p>
 $$
 \frac{1}{1+r}\mathbb{E}_q(X_1\vert X_0) = X_0 = \frac{1}{(1+r)^0}X_0.
 $$<p>In the examples below we will start already from the measure $q$ which can be defined in terms of the parameters of the problem such us th numbers $u, d, r, \sigma$ and the measure $p$ will not play any role. Finally, instead of discounting by multiplying by the fraction $\frac{1}{1+r}$ we will do it by muliplying by $\exp(-\widetilde{r})$ with $\widetilde{r}$ such that those two quantities coincide, also we will lose the tilde in the notation.</p>
@@ -7653,8 +7644,8 @@ $$<p>In the examples below we will start already from the measure $q$ which can 
 <p>In this section we implement the <strong> Backwards Induction Algorithm </strong> for pricing options whose payoff $g$ is a function of the stock price at maturity time, i.e, $g(S_N)$. We make both the European and American (although they are, technically speaking, path-dependent) cases under the Cox-Ross-Rubinstein parametrisation for the binomial tree.</p>
 <p>Examples of non path-dependent payoffs are:</p>
 <ul>
-<li>European call option with payoff $g(S_T) = (S(T) - K)^{+}$</li>
-<li>European put option whith payoff $g(S_T) = (K - S(T))^{+}$</li>
+<li>European call option with payoff $g(S_T) = (S_T - K)^{+}$</li>
+<li>European put option whith payoff $g(S_T) = (K - S_T)^{+}$</li>
 </ul>
 <p>where in both cases $T$ is the maturity, $S(t)$ is the stock price at time $t$ and $K$ is the strike value.</p>
 </div>
@@ -7718,6 +7709,17 @@ $$<ol start="3">
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="https://colab.research.google.com/drive/124dYgj3RbZzwkZmDHdXBvOgcnQ4TaQUN"> Colab file </a></p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
@@ -7739,7 +7741,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">CRR_binomial_model_European</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
@@ -7750,7 +7752,8 @@ $$<ol start="3">
     <span class="n">q</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">delta_t</span><span class="p">)</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span>
 
     <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">V</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">payoff</span><span class="p">(</span><span class="n">S_0</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="n">k</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+    <span class="n">V</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">payoff</span><span class="p">(</span><span class="n">S_0</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="n">k</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span> 
+                        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
 
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">):</span>
         <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
@@ -7767,7 +7770,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
@@ -7788,7 +7791,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">CRR_binomial_model_European</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">put</span><span class="p">,</span> <span class="n">K</span><span class="p">)</span>
@@ -7802,7 +7805,7 @@ $$<ol start="3">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[4]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>array([[ 6.5354428 ,  0.        ,  0.        ],
        [ 0.        , 12.68890338,  0.        ],
@@ -7816,7 +7819,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">CRR_binomial_model_American</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
@@ -7828,7 +7831,8 @@ $$<ol start="3">
 
     <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
     <span class="n">intrinsic_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
-    <span class="n">intrinsic_value</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">payoff</span><span class="p">(</span><span class="n">S_0</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="n">k</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
+    <span class="n">intrinsic_value</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">payoff</span><span class="p">(</span><span class="n">S_0</span> <span class="o">*</span> <span class="n">u</span><span class="o">**</span><span class="p">(</span><span class="n">N</span> <span class="o">-</span> <span class="n">k</span><span class="p">)</span> <span class="o">*</span> <span class="n">d</span><span class="o">**</span><span class="n">k</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
+                                       <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span>
     <span class="n">V</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span> <span class="o">=</span> <span class="n">intrinsic_value</span><span class="p">[:,</span> <span class="n">N</span><span class="p">]</span>
     <span class="n">continuation_value</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">N</span><span class="p">,</span> <span class="n">N</span><span class="p">))</span>
 
@@ -7849,7 +7853,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [23]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
@@ -7896,7 +7900,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [54]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Pricing_under_CRR_binomial_tree</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">,</span> <span class="n">option</span> <span class="o">=</span> <span class="s2">"European"</span><span class="p">):</span>
@@ -7905,7 +7909,7 @@ $$<ol start="3">
     <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"European"</span><span class="p">:</span>
         <span class="n">V</span> <span class="o">=</span> <span class="n">CRR_binomial_model_European</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    
+
     <span class="k">if</span> <span class="n">option</span> <span class="o">==</span> <span class="s2">"American"</span><span class="p">:</span>
         <span class="n">V</span><span class="p">,</span> <span class="n">_</span> <span class="p">,</span> <span class="n">_</span><span class="o">=</span> <span class="n">CRR_binomial_model_American</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">payoff</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
@@ -7919,7 +7923,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [55]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="mi">1</span>
@@ -7941,7 +7945,7 @@ $$<ol start="3">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[55]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>6.082354409142444</pre>
 </div>
@@ -7953,7 +7957,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [56]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">Pricing_under_CRR_binomial_tree</span><span class="p">(</span><span class="n">N</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">S_0</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">put</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">option</span> <span class="o">=</span> <span class="s1">'European'</span><span class="p">)</span>
@@ -7967,7 +7971,7 @@ $$<ol start="3">
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[56]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>5.553554112321353</pre>
 </div>
@@ -7979,7 +7983,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">Exact_price_European_Put</span><span class="p">(</span><span class="n">S_0</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">):</span>
@@ -7999,7 +8003,7 @@ $$<ol start="3">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">exact_value</span> <span class="o">=</span> <span class="n">Exact_price_European_Put</span><span class="p">(</span><span class="n">S_0</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
@@ -8016,22 +8020,8 @@ $$<ol start="3">
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>7.438302065026413
+<pre>5.573526022256971
 </pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 </div>
 </div>
 </div>
