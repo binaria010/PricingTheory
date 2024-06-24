@@ -7932,9 +7932,10 @@ $$<p>Since $A$ is any elemnt in $\mathcal{F}$, then both measures are equal.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol>
-<li>Consider an asset whose price follows a geometric Brownian motion</li>
-</ol>
+
+<h3 id = "europeancall">European call</h3>
+
+Consider an asset whose price follows a geometric Brownian motion<
 $$
 dS(t) = S(t)(r dt +\sigma dW(t)), ~~t&gt;0, ~~S(0)=s_0
 $$<p>with $r=0.05, \sigma=1, s_0=1, T=1$. Consider an European call with strike $K=1$. Recall that the price of the this option can be obtained either from the risk-neutral pricing formula or from the closed form in terms of the standard normal cummulative distribution $\Phi$:</p>
@@ -8029,9 +8030,11 @@ $$<p>We will generate $N_{sim}=5*10^{5}$ paths to estimate the expectation.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="2">
-<li>With the same model as before for the stock price, consider the Asian option whose payoff is:</li>
-</ol>
+
+<h3 id = "discreteasian"> (Discrete) Asian call</h3>
+    
+With the same model as before for the stock price, consider the Asian option whose payoff is:
+
 $$
 V(T) = \left(\frac{1}{m}\sum_{j=1}^m S_{t_j} -K\right)^{+}
 $$<p>where $0 = t_0 &lt; t_1 &lt; \dots &lt; t_m =T$ is a fixed set of dates, $T$ is the maturity and $K$ is the strike price.</p>
@@ -8147,9 +8150,11 @@ $$<p>Let us estimate this time-0 price using Monte Carlo and assume that the fix
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<ol start="3">
-<li>Basket call option with 5 underlying assets. The expected payoff of the option is given by</li>
-</ol>
+
+<h3 id= "basketcall"> Basket call option</h3>
+    
+Consider the basket call option with 5 underlying assets. The expected payoff of the option is given by
+    
 $$
 V(s_0) = \mathbb{E}\left[e^{-rT}\left(\frac{1}{5}\sum_{i=1}^5 S^{i}(T) - K\right)^{+}\right]
 $$<p>where for each $i\in\{1,2,3,4,5\}$, $S^{i}$ follows a Geometric Brownian motion</p>
